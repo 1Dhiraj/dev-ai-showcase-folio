@@ -103,4 +103,49 @@
   .hover-scale {
     @apply transition-transform duration-200 hover:scale-105;
   }
+
+  .parallax-slow {
+    transform: translate3d(0, calc(var(--scroll) * 0.5px), 0);
+  }
+
+  .parallax-medium {
+    transform: translate3d(0, calc(var(--scroll) * 0.3px), 0);
+  }
+
+  .parallax-fast {
+    transform: translate3d(0, calc(var(--scroll) * 0.1px), 0);
+  }
+}
+
+/* Enhanced keyframe animations */
+@keyframes float-enhanced {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(147, 51, 234, 0.4);
+  }
+}
+
+.animate-float-enhanced {
+  animation: float-enhanced 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }

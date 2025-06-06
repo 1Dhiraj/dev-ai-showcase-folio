@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Mail, Linkedin, Code, Brain, Database, Smartphone, GraduationCap, Award, Star, ChevronRight, ArrowDown, Menu, X } from "lucide-react";
+import { Github, ExternalLink, Mail, Linkedin, Code, Brain, Database, Smartphone, GraduationCap, Award, Star, ChevronRight, ArrowDown, Menu, X, Users, Zap, Shield, Clock, Quote, CheckCircle, Globe, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -54,6 +54,68 @@ const Index = () => {
       gradient: "from-orange-500 to-red-600",
       image: "photo-1551288049-bebda4e38f71"
     }
+  ];
+
+  const services = [
+    {
+      title: "Full Stack Development",
+      description: "End-to-end web application development with modern technologies",
+      icon: <Code className="w-8 h-8" />,
+      features: ["React & Next.js", "Node.js & Express", "Database Design", "API Development"],
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "AI & Machine Learning",
+      description: "Intelligent solutions powered by cutting-edge AI technologies",
+      icon: <Brain className="w-8 h-8" />,
+      features: ["Deep Learning", "Computer Vision", "NLP Processing", "Predictive Analytics"],
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Cloud & DevOps",
+      description: "Scalable infrastructure and deployment solutions",
+      icon: <Globe className="w-8 h-8" />,
+      features: ["AWS & Azure", "Docker & Kubernetes", "CI/CD Pipelines", "Monitoring"],
+      gradient: "from-green-500 to-teal-500"
+    },
+    {
+      title: "Consulting & Strategy",
+      description: "Technical guidance and strategic planning for your projects",
+      icon: <Users className="w-8 h-8" />,
+      features: ["Architecture Design", "Code Reviews", "Team Training", "Best Practices"],
+      gradient: "from-orange-500 to-red-500"
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "CTO at TechCorp",
+      content: "Outstanding work on our AI-powered platform. The quality and attention to detail exceeded our expectations.",
+      rating: 5,
+      image: "photo-1494790108755-2616b612b786"
+    },
+    {
+      name: "Michael Chen",
+      role: "Product Manager at StartupXYZ",
+      content: "Delivered a complex full-stack application on time and within budget. Highly recommend!",
+      rating: 5,
+      image: "photo-1472099645785-5658abf4ff4e"
+    },
+    {
+      name: "Emily Rodriguez",
+      role: "Founder at InnovateLab",
+      content: "The machine learning model transformed our business operations. Incredible technical expertise.",
+      rating: 5,
+      image: "photo-1438761681033-6461ffad8d80"
+    }
+  ];
+
+  const stats = [
+    { number: "50+", label: "Projects Completed", icon: <CheckCircle className="w-6 h-6" /> },
+    { number: "5+", label: "Years Experience", icon: <Clock className="w-6 h-6" /> },
+    { number: "30+", label: "Happy Clients", icon: <Heart className="w-6 h-6" /> },
+    { number: "99%", label: "Success Rate", icon: <Zap className="w-6 h-6" /> }
   ];
 
   const skills = {
@@ -126,7 +188,7 @@ const Index = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Education', 'Projects', 'Skills', 'Contact'].map((item) => (
+            {['Home', 'About', 'Services', 'Projects', 'Skills', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -150,7 +212,7 @@ const Index = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-black/90 backdrop-blur-lg">
             <div className="flex flex-col space-y-4 p-4">
-              {['Home', 'About', 'Education', 'Projects', 'Skills', 'Contact'].map((item) => (
+              {['Home', 'About', 'Services', 'Projects', 'Skills', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -166,7 +228,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-        {/* Parallax Background Layers */}
+        {/* Enhanced Parallax Background */}
         <div 
           className="absolute inset-0 opacity-30"
           style={{
@@ -179,35 +241,36 @@ const Index = () => {
         
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-3xl"></div>
         
-        {/* Animated Particles */}
+        {/* Enhanced Animated Particles */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(50)].map((_, i) => (
+          {[...Array(100)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-white rounded-full opacity-20"
+              className="absolute w-1 h-1 bg-white rounded-full opacity-20 animate-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 5}s`,
-                transform: `translateY(${scrollY * (0.1 + Math.random() * 0.1)}px)`
+                animationDuration: `${3 + Math.random() * 4}s`,
+                transform: `translateY(${scrollY * (0.1 + Math.random() * 0.2)}px)`
               }}
             />
           ))}
         </div>
 
-        {/* Floating geometric shapes */}
+        {/* Enhanced Floating geometric shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
             className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"
-            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+            style={{ transform: `translateY(${scrollY * 0.3}px) rotate(${scrollY * 0.1}deg)` }}
           />
           <div 
             className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"
-            style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+            style={{ transform: `translateY(${scrollY * 0.2}px) rotate(${-scrollY * 0.1}deg)` }}
           />
           <div 
             className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"
-            style={{ transform: `translateY(${scrollY * 0.4}px)` }}
+            style={{ transform: `translateY(${scrollY * 0.4}px) rotate(${scrollY * 0.15}deg)` }}
           />
         </div>
 
@@ -256,24 +319,58 @@ const Index = () => {
           <ArrowDown className="w-6 h-6 text-white/60" />
         </div>
         
-        {/* Floating Elements with Parallax */}
+        {/* Enhanced Floating Elements with More Parallax */}
         <div 
           className="absolute top-20 left-10 animate-float"
-          style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+          style={{ transform: `translateY(${scrollY * 0.1}px) rotate(${scrollY * 0.05}deg)` }}
         >
           <Code className="w-8 h-8 text-blue-400/30" />
         </div>
         <div 
           className="absolute bottom-20 right-10 animate-float animation-delay-1000"
-          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+          style={{ transform: `translateY(${scrollY * 0.15}px) rotate(${-scrollY * 0.05}deg)` }}
         >
           <Brain className="w-8 h-8 text-purple-400/30" />
         </div>
         <div 
           className="absolute top-1/2 left-20 animate-float animation-delay-2000"
-          style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+          style={{ transform: `translateY(${scrollY * 0.2}px) rotate(${scrollY * 0.08}deg)` }}
         >
           <Database className="w-6 h-6 text-green-400/30" />
+        </div>
+        <div 
+          className="absolute top-1/3 right-1/4 animate-float animation-delay-3000"
+          style={{ transform: `translateY(${scrollY * 0.12}px) rotate(${-scrollY * 0.06}deg)` }}
+        >
+          <Smartphone className="w-7 h-7 text-cyan-400/30" />
+        </div>
+      </section>
+
+      {/* Stats Section with Parallax */}
+      <section className="py-20 px-4 bg-black/30 relative">
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `translateY(${scrollY * 0.3}px)`
+          }}
+        />
+        <div className="container mx-auto relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center animate-slide-in-up group" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {stat.icon}
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                  {stat.number}
+                </div>
+                <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -315,7 +412,7 @@ const Index = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-6 animate-slide-in-right">
-              <Card className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
+              <Card className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 group">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/30 transition-all duration-300 group-hover:rotate-12">
                     <Code className="w-8 h-8 text-blue-400" />
@@ -325,7 +422,7 @@ const Index = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-rotate-1 group">
+              <Card className="bg-white/5 border-white/10 text-white hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:rotate-1 group">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500/30 transition-all duration-300 group-hover:rotate-12">
                     <Brain className="w-8 h-8 text-purple-400" />
@@ -335,6 +432,52 @@ const Index = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section with Enhanced Parallax */}
+      <section id="services" className="py-20 px-4 relative">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `translateY(${scrollY * 0.2}px) scale(${1 + scrollY * 0.0001})`
+          }}
+        />
+        <div className="container mx-auto relative z-10">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center animate-fade-in-up">Services</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:rotate-1 group overflow-hidden animate-slide-in-up" style={{ animationDelay: `${index * 200}ms` }}>
+                <div className={`h-2 bg-gradient-to-r ${service.gradient}`}></div>
+                <CardHeader>
+                  <div className="flex items-center space-x-4">
+                    <div className={`p-3 rounded-lg bg-gradient-to-r ${service.gradient} bg-opacity-20 group-hover:rotate-12 transition-transform duration-300`}>
+                      {service.icon}
+                    </div>
+                    <div>
+                      <CardTitle className="text-white group-hover:text-blue-300 transition-colors duration-300">{service.title}</CardTitle>
+                      <CardDescription className="text-gray-300 mt-2">
+                        {service.description}
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -642,6 +785,47 @@ const Index = () => {
               <Linkedin className="w-5 h-5 mr-2" />
               LinkedIn
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-black/20 relative">
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=2000&q=80)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `translateY(${scrollY * 0.15}px) rotate(${scrollY * 0.01}deg)`
+          }}
+        />
+        <div className="container mx-auto relative z-10">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center animate-fade-in-up">What Clients Say</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 group animate-slide-in-up" style={{ animationDelay: `${index * 200}ms` }}>
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <Quote className="w-8 h-8 text-blue-400/50 mb-4" />
+                  <p className="text-gray-300 mb-6 italic leading-relaxed">"{testimonial.content}"</p>
+                  <div className="flex items-center space-x-3">
+                    <div 
+                      className="w-12 h-12 rounded-full bg-cover bg-center border-2 border-blue-400/30 group-hover:border-blue-400 transition-colors duration-300"
+                      style={{ backgroundImage: `url(https://images.unsplash.com/${testimonial.image}?auto=format&fit=crop&w=100&q=80)` }}
+                    />
+                    <div>
+                      <h4 className="text-white font-semibold group-hover:text-blue-300 transition-colors duration-300">{testimonial.name}</h4>
+                      <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
